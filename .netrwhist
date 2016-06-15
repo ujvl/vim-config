@@ -1,7 +1,7 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/sundeep/Desktop/sbt'
-let g:netrw_dirhist_2='/Users/Ujval/cs61a/lab/lab01'
-let g:netrw_dirhist_3='/Users/Ujval/dev/succinct/results/bin'
-let g:netrw_dirhist_4='/Users/Ujval/Documents/berkeley/cs170/hw3'
-let g:netrw_dirhist_5='/Users/Ujval/dev/sandbox/gen-java'
+let g:netrw_dirhist_1='/Users/Ujval/dev/loadbal/load-balance/thrift'
+let g:netrw_dirhist_2='/Users/Ujval/dev/loadbal/load-balance'
+let g:netrw_dirhist_3='/Users/Ujval/dev/loadbal/results/sm/skewed_lat_1'
+let g:netrw_dirhist_4='/Users/Ujval/dev/loadbal/load-balance/conf'
+let g:netrw_dirhist_5='/dev/fd'

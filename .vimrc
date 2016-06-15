@@ -6,7 +6,7 @@ colorscheme thor " Tomorrow-Night-Bright kellys abra smyck
 filetype plugin indent on
 set encoding=utf-8
 set autoindent
-"set expandtab
+set expandtab
 set shiftwidth=4
 set tabstop=4
 set linespace=2
@@ -28,3 +28,4 @@ autocmd BufEnter,BufRead,BufNewFile *.py    set iskeyword-=:
 
 " colorscheme for latex only
 autocmd FileType tex colorscheme thor
+autocmd FileType cpp colorscheme 256-jungle
