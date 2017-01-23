@@ -1,6 +1,7 @@
 execute pathogen#infect()
 
 syntax enable
+set backspace=2
 set background=light
 colorscheme thor " Tomorrow-Night-Bright kellys abra smyck
 filetype plugin indent on
@@ -26,6 +27,11 @@ abbr sop System.out.println();<esc>1hi
 " fuck vim's python syntax highlighting
 autocmd BufEnter,BufRead,BufNewFile *.py    set iskeyword-=:
 
+" 80char max lim
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
 " colorscheme for latex only
 autocmd FileType tex colorscheme thor
 autocmd FileType cpp colorscheme 256-jungle
+set conceallevel=0
