@@ -20,18 +20,30 @@ set iskeyword+=:
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-abbr psvm public static void main(String[] args){<CR>}<esc>O
-abbr sysout System.out.println("");<esc>2hi
-abbr sop System.out.println();<esc>1hi
+"abbr psvm public static void main(String[] args){<CR>}<esc>O
+"abbr sysout System.out.println("");<esc>2hi
+"abbr sop System.out.println();<esc>1hi
 
 " fuck vim's python syntax highlighting
 autocmd BufEnter,BufRead,BufNewFile *.py    set iskeyword-=:
 
-" 80char max lim
+" char max lim
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%121v', 100)
 
 " colorscheme for latex only
 autocmd FileType tex colorscheme thor
 autocmd FileType cpp colorscheme 256-jungle
 set conceallevel=0
+let g:tex_conceal = ""
+
+" Don't replace clipboard with deleted
+xnoremap p "_dP"
+
+" Jump to last pos
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+" Highlight searches
+set hlsearch
