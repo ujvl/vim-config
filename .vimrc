@@ -23,14 +23,12 @@ set iskeyword+=:
 au BufRead,BufNewFile *.pyst set filetype=python
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
-
 " fuck vim's python syntax highlighting
 autocmd BufEnter,BufRead,BufNewFile *.py    set iskeyword-=:
 
 " char max lim
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-call matchadd('OverLength', '\%101v', 100)
-"match OverLength /\%91v.\+/
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%121v', 100)
 
 " colorscheme for latex only
 autocmd FileType tex colorscheme thor
@@ -41,7 +39,10 @@ let g:tex_conceal = ""
 " Don't replace clipboard with deleted
 xnoremap p "_dP"
 
-"set foldmethod=syntax
-"set foldnestmax=10
-"set nofoldenable
-"set foldlevel=2
+" Jump to last pos
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+" Highlight searches
+set hlsearch
